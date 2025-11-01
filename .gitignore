@@ -13,3 +13,9 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+# Socket files
+*.sock
+*.sock.*
+tmp/db/mysql.sock
+tmp/db/
+/tmp/

@@ -1,4 +1,11 @@
-FROM php:8.0-apache
+FROM node:18-alpine AS node_build
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
+
+FROM php:8.2-apache
 
 RUN apt-get update && apt-get install -y \
       apt-utils \
@@ -13,6 +20,7 @@ RUN apt-get update && apt-get install -y \
       docker-php-ext-install zip && \
       apt-get clean && \
       rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
 
 COPY ./_docker/app/php.ini /usr/local/etc/php/conf.d/php.ini
 
