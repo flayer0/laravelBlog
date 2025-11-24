@@ -27,11 +27,17 @@
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
                     <div class="col-12">
-                        <form class="col-4 " action="{{ route('admin.post.store') }}" method="POST">
+                        <form class="col-5 " action="{{ route('admin.post.store') }}" method="POST">
                             @csrf
                             <div class="form-group">
                                 <input type="text" class="form-control" name="title" id="postName"
-                                    placeholder="Название поста">
+                                    placeholder="Название поста" value="{{ old('title') }}">
+                                @error('title')
+                                    <div class="text-danger">Это поле необходимо для заполнение</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <textarea name="content" id="summernote">{{ old('title') }}</textarea>
                                 @error('title')
                                     <div class="text-danger">Это поле необходимо для заполнение</div>
                                 @enderror
