@@ -14,9 +14,17 @@
             </li>
             <li class="nav-item">
                 <a href="{{ route('admin.tag.index') }}" class="nav-link">
-                    <i class="fas fa-tags"></i>
+                    <i class="nav-icon fas fa-tags"></i>
                     <p>
                         Теги
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ route('admin.post.index') }}" class="nav-link">
+                    <i class="nav-icon fas fa-copy"></i>
+                    <p>
+                        Посты
                     </p>
                 </a>
             </li>
