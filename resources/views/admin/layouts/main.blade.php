@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AdminLTE 3 | Dashboard</title>
 
+    <link rel="stylesheet" href="{{ asset('plugins/select2/css/select2.css') }}">
+
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -99,6 +101,8 @@
     <script src="{{ asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('dist/js/adminlte.js') }}"></script>
+    <script src="{{ asset('plugins/select2/js/select2.min.js') }}"></script>
+
     <!-- AdminLTE for demo purposes -->
     <script src="{{ asset('dist/js/demo.js') }}"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
@@ -122,6 +126,7 @@
         $(function() {
             bsCustomFileInput.init();
         });
+        $('.select2').select2();
     </script>
     <style>
         .custom-file-input:lang(en)~.custom-file-label::after {
