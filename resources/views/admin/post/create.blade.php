@@ -38,7 +38,7 @@
                             </div>
                             <div class="form-group">
                                 <textarea name="content" id="summernote">{{ old('title') }}</textarea>
-                                @error('title')
+                                @error('content')
                                     <div class="text-danger">Это поле необходимо для заполнение</div>
                                 @enderror
                             </div>
@@ -53,6 +53,9 @@
                                         <span class="input-group-text">Upload</span>
                                     </div>
                                 </div>
+                                @error('preview_image')
+                                    <div class="text-danger">Это поле необходимо для заполнение</div>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputFile">Добавить изображение</label>
@@ -65,6 +68,23 @@
                                         <span class="input-group-text">Upload</span>
                                     </div>
                                 </div>
+                                @error('main_image')
+                                    <div class="text-danger">Это поле необходимо для заполнение</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label>Выберите категорию</label>
+                                <select class="form-control" name="category_id">
+                                    @foreach ($categories as $category)
+                                        <option value="{{ $category->id }}"
+                                            {{ $cayegory->id == old('category_id') ? 'selected' : '' }}>
+                                            {{ $category->title }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                                @error('category_id')
+                                    <div class="text-danger">Это поле необходимо для заполнение</div>
+                                @enderror
                             </div>
                             <input type="submit" value="Добавить" class="btn btn-primary">
                         </form>
