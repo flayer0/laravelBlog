@@ -114,5 +114,17 @@ return [
             resource_path('views/vendor/mail'),
         ],
     ],
+    // Source - https://stackoverflow.com/a
+    // Posted by user6780526
+    // Retrieved 2025-12-04, License - CC BY-SA 3.0
+
+    'stream' => [
+        'ssl' => [
+            'allow_self_signed' => true,
+            'verify_peer' => false,
+            'verify_peer_name' => false,
+        ],
+    ],
+
 
 ];
