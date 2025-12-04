@@ -31,6 +31,7 @@ class PasswordMail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('mail.user.password');
+        return $this->markdown('mail.user.password')
+                ->subject('Ваш пароль для входа в ' . config('app.name'));
     }
 }
