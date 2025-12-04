@@ -34,7 +34,14 @@
                                 <input type="text" class="form-control" name="name" id="userName"
                                     placeholder="Имя пользователя" value="{{ $user->name }}">
                                 @error('name')
-                                    <div class="text-danger">Это поле необходимо для заполнение</div>
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="email" id="userEmail"
+                                    placeholder="Email пользователя" value="{{ $user->email }}">
+                                @error('email')
+                                    <div class="text-danger">{{ $message }}</div>
                                 @enderror
                             </div>
                             <input type="submit" value="Обновить" class="btn btn-primary">
